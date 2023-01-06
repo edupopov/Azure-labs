@@ -1,0 +1,38 @@
+###################################################################################################################
+# Estes passos o ajudarão a montar uma infra básica no Microsoft Azure a titulo de aprendizado                    #
+# Autor: Eduardo Popovici - www.eduardopopovici.com                                                               #
+# REF técnica - https://learn.microsoft.com/pt-br/previous-versions/azure/virtual-machines/linux/tutorial-monitor #
+# Foco: AZ-900 e AZ-104                                                                                           #
+# Data de criação: JAN-2023                                                                                       #
+###################################################################################################################
+
+# Faça o login no portal do Azure
+az login
+
+# Crie o grupo de recursos
+az group create --name rg-az104-popov-eastus --location eastus
+
+# Crie a VM
+az vm create \
+  --resource-group rg-az104-popov-eastus \
+  --name vmlab01-LX \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
+  
+# Habilitar o diagnóstico de inicialização
+storageacct=mydiagdata$RANDOM
+az storage account create \
+  --resource-group rg-az104-popov-eastus \
+  --name $storageacct \
+  --sku Standard_LRS \
+  --location eastus
+  
+# Exibir a URI do contêiner de armazenamento de blobs
+bloburi=$(az storage account show --resource-group rg-az104-popov-eastus --name $storageacct --query 'primaryEndpoints.blob' -o tsv)
+  
+# Habilitar o diagnóstico de inicialização
+az vm boot-diagnostics enable \
+  --resource-group rg-az104-popov-eastus \
+  --name vmlab01-LX \
+  --storage $bloburi
