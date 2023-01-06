@@ -11,6 +11,9 @@
 # OBS - Estes passos entendem que você já instalou tanto o powershell quanto o modulo do azure em seu sistema operacional (Windows, Linux e/ou macOS)
 # Caso você não tenha feito a instalação ainda, será necessário adequar seu sistema operacional para utilizar esta receita de criação.
 
+# Veja a versão do az cli em seu equipamento antes de começar
+az --version
+
 # Faça o login no portal do Azure
 az login
 
@@ -41,6 +44,9 @@ az vm boot-diagnostics enable \
   --resource-group rg-az104-popov-eastus \
   --name vmlab01-LX \
   --storage $bloburi
+
+# Visualizar VMs criadas
+az vm list
 
 # IMPORTANTE --> Siga este documento para usar a Extensão de Diagnóstico do Linux 3.0 para monitorar métricas e logs refinados
 # REF https://learn.microsoft.com/pt-br/azure/virtual-machines/extensions/diagnostics-linux-v3
