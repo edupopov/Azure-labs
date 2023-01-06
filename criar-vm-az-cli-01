@@ -3,6 +3,8 @@
 # Autor: Eduardo Popovici - www.eduardopopovici.com                                                               #
 # REF técnica - https://learn.microsoft.com/pt-br/previous-versions/azure/virtual-machines/linux/tutorial-monitor #
 # Foco: AZ-900 e AZ-104                                                                                           #
+# Tipo da VM: Linux                                                                                               #
+# Sistema Operacional: Ubuntu                                                                                     #
 # Data de criação: JAN-2023                                                                                       #
 ###################################################################################################################
 
