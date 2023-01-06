@@ -8,6 +8,9 @@
 # Data de criação: JAN-2023                                                                                       #
 ###################################################################################################################
 
+# OBS - Estes passos entendem que você já instalou tanto o powershell quanto o modulo do azure em seu sistema operacional (Windows, Linux e/ou macOS)
+# Caso você não tenha feito a instalação ainda, será necessário adequar seu sistema operacional para utilizar esta receita de criação.
+
 # Faça o login no portal do Azure
 az login
 
