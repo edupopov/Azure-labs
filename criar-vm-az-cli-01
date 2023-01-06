@@ -33,8 +33,28 @@ storageacct=mydiagdata$RANDOM
 az storage account create \
   --resource-group rg-az104-popov-eastus \
   --name $storageacct \
-  --sku Standard_LRS \
-  --location eastus
+  
+# Agora valide as informações da VM que foi criada
+az vm show --name vmlab01-LX --resource-group rg-az104-popov-eastus
+
+# Vamos consultar o ID da interface de rede de nossa VM criada
+az vm show --name vmlab01-LX \
+  --resource-group rg-az104-popov-eastus \
+  --query 'networkProfile.networkInterfaces[].id' \
+  --output tsv
+  
+# Vamos agora vincular o ID da interface de rede a uma variavel
+NIC_ID=$(az vm show -n vmlab01-LX -g rg-az104-popov-eastus \
+  --query 'networkProfile.networkInterfaces[].id' \
+  -o tsv)
+  
+# Veja como ficou facil buscar informações filtradas utilizando uma varivel
+az network nic show --ids $NIC_ID
+
+# Você pode ainda buscar informações mais refinadas usando o --query
+az network nic show --ids $NIC_ID \
+  --query '{IP:ipConfigurations[].publicIpAddress.id, Subnet:ipConfigurations[].subnet.id}' \
+  -o json
   
 # Exibir a URI do contêiner de armazenamento de blobs
 bloburi=$(az storage account show --resource-group rg-az104-popov-eastus --name $storageacct --query 'primaryEndpoints.blob' -o tsv)
