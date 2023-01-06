@@ -36,3 +36,6 @@ az vm boot-diagnostics enable \
   --resource-group rg-az104-popov-eastus \
   --name vmlab01-LX \
   --storage $bloburi
+
+# IMPORTANTE --> Siga este documento para usar a Extensão de Diagnóstico do Linux 3.0 para monitorar métricas e logs refinados
+# REF https://learn.microsoft.com/pt-br/azure/virtual-machines/extensions/diagnostics-linux-v3
