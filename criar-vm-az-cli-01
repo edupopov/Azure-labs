@@ -81,5 +81,8 @@ remove-azresourcelock -ResourceGroupName rg-az104-popov-eastus -LockName pslock-
 # Para acessar uma VM Windows criada, carregando o remote desktop através do powershell, use o seguinte comando
 Get-azremotedesktopfile -resourcegroupname rg-az104-popov-eastus -name WINVM01 -launch
 
+# Para carregar um arquivo RDP específico salvo em sua área de trabalho, use o seguinte comando
+Get-azremotedesktopfile -resourcegroupname XPTO -name WINVM -LocalPath c:\users\eduardopopovici\Desktop\WinRDP.rdp
+
 # IMPORTANTE --> Siga este documento para usar a Extensão de Diagnóstico do Linux 3.0 para monitorar métricas e logs refinados
 # REF https://learn.microsoft.com/pt-br/azure/virtual-machines/extensions/diagnostics-linux-v3
