@@ -68,5 +68,8 @@ az vm boot-diagnostics enable \
 # Visualizar VMs criadas
 az vm list
 
+ # Deletar grupo de recursos - Este comando apagará o grupo e os recursos que ali estejam (desde que não estejam protegidos pelo lock)
+ az group delete --name rg-az104-popov-eastus
+
 # IMPORTANTE --> Siga este documento para usar a Extensão de Diagnóstico do Linux 3.0 para monitorar métricas e logs refinados
 # REF https://learn.microsoft.com/pt-br/azure/virtual-machines/extensions/diagnostics-linux-v3
