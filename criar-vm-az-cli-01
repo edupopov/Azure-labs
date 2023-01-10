@@ -10,6 +10,7 @@
 
 # OBS - Estes passos entendem que você já instalou tanto o powershell quanto o modulo do azure em seu sistema operacional (Windows, Linux e/ou macOS)
 # Caso você não tenha feito a instalação ainda, será necessário adequar seu sistema operacional para utilizar esta receita de criação.
+# Os comandos não estão exatamente em uma ordem cronológica, ou seja, pode ser necessário aplica-los em situações diferentes
 
 # Veja a versão do az cli em seu equipamento antes de começar
 az --version
