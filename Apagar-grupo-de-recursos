@@ -1,0 +1,2 @@
+# Apagar grupo de recursos
+remove-azresourcegroup -name myResourceGroup
