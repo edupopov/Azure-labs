@@ -1,0 +1,10 @@
+# Criar VM Windows Server usando AZ CLI
+New-AzVm `
+    -ResourceGroupName "AZ104LAB01" `
+    -Name "AZ104LABVM01" `
+    -Location "East US" `
+    -VirtualNetworkName "AZ104LABVNET01" `
+    -SubnetName "AZ104LABSUBNET01" `
+    -Image "Win2016Datacenter"  `
+    -PublicIpAddressName "AZ104LABPUBLICIP01" `
+    -OpenPorts 80,3389
