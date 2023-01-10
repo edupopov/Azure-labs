@@ -78,5 +78,8 @@ new-azresourcelock -ResourceGroupName rg-az104-popov-eastus -LockName pslock-By-
 # Para remover o bloqueio de deleção utilize este comando
 remove-azresourcelock -ResourceGroupName rg-az104-popov-eastus -LockName pslock-By-Edu
 
+# Para acessar uma VM Windows criada, carregando o remote desktop através do powershell, use o seguinte comando
+Get-azremotedesktopfile -resourcegroupname rg-az104-popov-eastus -name WINVM01 -launch
+
 # IMPORTANTE --> Siga este documento para usar a Extensão de Diagnóstico do Linux 3.0 para monitorar métricas e logs refinados
 # REF https://learn.microsoft.com/pt-br/azure/virtual-machines/extensions/diagnostics-linux-v3
