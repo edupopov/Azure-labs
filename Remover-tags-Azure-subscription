@@ -1,0 +1,7 @@
+# Maneira 01
+Remove-AzTag -Name "Department"
+Remove-AzTag -Name "Department" -Value "HumanResources" -PassThru
+
+# Maneira 02
+$deletedTags = @{"key1"="value1"}
+Update-AzTag -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -Tag $deletedTags -Operation Delete
