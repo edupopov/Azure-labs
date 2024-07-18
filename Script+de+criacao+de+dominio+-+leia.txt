@@ -1,0 +1,26 @@
+#registro de provedor
+Register-AzResourceProvider -ProviderNamespace 'Microsoft.Compute'
+Register-AzResourceProvider -ProviderNamespace 'Microsoft.Network'
+
+# Verificacao de registro
+Get-AzResourceProvider -ListAvailable | Where-Object {$_.ProviderNamespace -eq 'Microsoft.Compute'}
+
+# Criacao da estrutura
+# Criacao de grupo de recursos em eastus
+(Get-AzLocation).Location
+$location = 'eastus'
+$resourceGroupName = 'az140-11-RG'
+New-AzResourceGroup -Location $location -Name $resourceGroupName
+
+#Agora acesse a URL: https://github.com/az140mp/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain
+
+# Desca a barra de rolagem e clique em Deploy to Azure
+# Aguarde até a carga ser finalizada
+# Clique em editar parametro
+# Clique em carregar arquivo
+# Escolha o BANANA-DC-az140-11_azuredeploydc11.parameters
+# Anote credenciais de usuario e senha
+# Revise o nome dos itens e substitua o 140 por 104 - se houverem
+# Escolha o grupo de recursos az140-11-RG
+# Escolha um nome de dominio - popovici.lab
+# Clique em examinar e criar, depois em criar
