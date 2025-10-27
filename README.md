@@ -57,7 +57,3 @@ O desenho da arquitetura contempla os seguintes componentes:
 A equipe de Cloud deverá, com base neste cenário, detalhar a proposta técnica, incluindo um cronograma de implementação, custos estimados e um plano de migração para a nova arquitetura. O desenho da arquitetura deverá seguir as melhores práticas do **Azure Well-Architected Framework** para garantir uma solução robusta, segura e otimizada.
 
 Segurança Aprimorada: A integração com o Active Directory e o uso de serviços gerenciados do Azure fortalecerão a postura de segurança da aplicação.
-
-6. Próximos Passos
-
-A equipe de Cloud deverá, com base neste cenário, detalhar a proposta técnica, incluindo um cronograma de implementação, custos estimados e um plano de migração para a nova arquitetura. O desenho da arquitetura deverá seguir as melhores práticas do Azure Well-Architected Framework para garantir uma solução robusta, segura e otimizada.
